@@ -1,9 +1,9 @@
 # include <stdio.h>
 # include <pthread.h>
 # include <unistd.h>
-#include <cstdlib>
+# include <cstdlib>
 
-
+# include "network_client.h"
 
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
@@ -20,6 +20,7 @@ void* child_thread(void* arg) {
     
     if(id == 0){
 	printf("setting up networking stack ... \n");
+	start_client();
 	sleep(20);
     	printf("network setup, getting data \n");
     }
