@@ -1,3 +1,7 @@
+# LOCAL DEV IGNORE
+
+./local/*
+
 # Prerequisites
 *.d
 
